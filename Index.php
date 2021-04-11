@@ -18,8 +18,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <style>
         body{ font: 14px sans-serif; text-align: center; }
     </style>
-</head>
-<body>
+	
+	
+	
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="#">Peepers</a>
@@ -46,10 +47,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </nav>
 
 
+</head>
+<body>
+
+
+
+
+
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></b>. Welcome to a basic site.</h1>
     <p>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
     </p>
+	
+	
 </body>
 </html>
