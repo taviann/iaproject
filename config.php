@@ -8,16 +8,6 @@ $db = 'project';
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 define('DB_SERVER', $servername);
-define('DB_USERNAM<?php
-
-$servername = 'localhost';
-$username = 'root';
-$password = 'root';
-$db = 'project';
-
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', $servername);
 define('DB_USERNAME', $username);
 define('DB_PASSWORD', $password);
 define('DB_NAME', $db);
