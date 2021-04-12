@@ -105,9 +105,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-
+<img src="images/logo.png" width="30%" height="30%">
 <center>
-<br><br><br>
 
     <div class="wrapper container bg-dark text-white">
         <h2>Login</h2>
