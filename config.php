@@ -2,7 +2,7 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = 'root';
+$password = '';
 $db = 'project';
 
 /* Database credentials. Assuming you are running MySQL
@@ -35,7 +35,7 @@ $conn = new mysqli($servername, $username, $password);
     if ($conn->query($sql) === TRUE) {
         echo "Database created successfully" . "\n\n";
         
-        $sql2 = "CREATE TABLE " . $db .  ".users (
+        $sql2 = "CREATE TABLE " . $db .  ".customers (
             `id` INT NOT NULL AUTO_INCREMENT,
             `email` VARCHAR(45) NOT NULL,
             `firstname` VARCHAR(45) NOT NULL,

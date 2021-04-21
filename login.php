@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him/her to index page
+// Check if the customer is already logged in, if yes then redirect him/her to index page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: index.php");
     exit;
@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, email, firstname, lastname, password FROM users WHERE email = ?";
+        $sql = "SELECT id, email, firstname, lastname, password FROM customers WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["lastname"] = $lastname;
                             $_SESSION["email"] = $email;                            
                             
-                            // Redirect user to index page
+                            // Redirect customer to index page
                             header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
