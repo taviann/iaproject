@@ -97,12 +97,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
+        body{ font: 14px sans-serif;
+            background-image: url("images/login_bg.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 200%; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+<img src="images/logo.png" width="30%" height="30%">
+<center>
+
+    <div class="wrapper container bg-dark text-white">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
 
