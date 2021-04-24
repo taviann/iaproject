@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 02:59 PM
+-- Generation Time: Apr 24, 2021 at 03:19 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -56,6 +56,8 @@ CREATE TABLE `foods` (
 --
 
 INSERT INTO `foods` (`id_food`, `id_restaurant`, `name`, `description`, `price`, `image`) VALUES
+(302, 300, 'Whopper', 'Adult size burger', 700, NULL),
+(472, 300, 'Fries(Small)', 'Small Fries', 100, NULL),
 (793, 100, 'BeefPatty', 'Patty made of beef', 170, NULL),
 (21389, 100, 'ChickenPatty', 'Patty Made of Chicken', 160, NULL);
 

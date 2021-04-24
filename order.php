@@ -1,6 +1,8 @@
 <?php
 // Initialize the session
 session_start();
+//$restaurantID = $_SESSION['id_restaurant'];
+$restaurantID = $_GET['id_restaurant'];
 
 
 // Include config file
@@ -9,7 +11,8 @@ require_once "food_class.php";
 
 //read the food
 // Attempt select query execution
-$sql = "SELECT * FROM foods";//where restaurant = 
+//$sql = "SELECT * FROM foods";//where restaurant = 
+$sql = "SELECT * FROM foods WHERE id_restaurant = " . $restaurantID;
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
