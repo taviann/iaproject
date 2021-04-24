@@ -346,7 +346,7 @@ echo "</table>";
                     <div class="order-label">Address</div>
                     <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
 
-                    <input type="hidden" name="id_restaurant" value="<?php echo $restaurantID?>" />
+                    <input type="hidden" name="id_restaurant" value="<?php echo $restaurantID?>" /><!--DO NOT REMOVE!.. by Jermaine-->
 
                     <input type="submit" value="Confirm Order" class="btn btn-primary">
                 </fieldset>
