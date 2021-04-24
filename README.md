@@ -2,7 +2,7 @@
 Our final group project.
 
 
-Neightbour hood watch website.
+Food Ordering site
 
 Description:
-Users will be able to sign in, see reported incidents, and anonymously report incidents.
+Users will be able to sign in, see orders, and make orders.
