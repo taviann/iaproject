@@ -37,7 +37,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.php">Categories</a>
+                        <a href="categories.php">Order</a>
                     </li>
                     <li>
                         <a href="Delivery Services.php">Delivery Services</a>
