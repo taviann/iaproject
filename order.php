@@ -213,66 +213,9 @@ class foo{
                 </a>
             </div>
 
-            <div id="myo" class="myorder">
-            <table id="myOrderTable" class="table table-borderless table-striped table-earning">
-                  <thead>
-                      <tr>
-                          <th>Item</th>
-                          <th>Price</th>
-                        </tr>
-                    </thead>
-  <tbody id="testBody"></tbody>
-</table>
-            </div>
+            <div id="restaurant_menu" class="restaurant_menu">
+            <?php
 
-
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.php">Categories</a>
-                    </li>
-                    <li>
-                        <a href="Delivery Services.php">Delivery Services </a> 
-                    </li>
-                    <li>
-                        <a href="Contact.php">Contact</a>
-                    </li>
-					<li>
-						<a href="profile.php"><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></a>
-					</li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    
-
-    <section class="food-search">
-        <div class="container">
-            
-            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
-
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="order">
-                <fieldset>
-                    <legend>Selected Food</legend>
-
-                    <div class="food-img">
-                        <img src="images/JP.jpg" alt="" class="img-responsive img-curve">
-                    </div>
-    
-                    <div class="food-desc">
-                        <h3>Juici Patties</h3>
-                        
-
-                        <!--<div class="order-label">Quantity</div>
-                        <input type="text" name="qty" class="input-responsive" value="" required>-->
-
-                        <?php
 
 echo "<table class='table table-bordered table-striped'>";
 echo "<thead>";
@@ -317,6 +260,68 @@ echo "</tbody>";
 echo "</table>";
 
                         ?>
+            </div>
+
+
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.php">Categories</a>
+                    </li>
+                    <li>
+                        <a href="Delivery Services.php">Delivery Services </a> 
+                    </li>
+                    <li>
+                        <a href="Contact.php">Contact</a>
+                    </li>
+					<li>
+						<a href="profile.php"><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></a>
+					</li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    
+
+    <section class="food-search">
+        <div class="container">
+            
+            <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
+            
+
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="order">
+                <fieldset>
+                    <legend>Selected Food</legend>
+
+                    <div class="food-img">
+                        <img src="images/JP.jpg" alt="" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-desc">
+                        <h3>Juici Patties</h3>
+                        
+
+                        <!--<div class="order-label">Quantity</div>
+                        <input type="text" name="qty" class="input-responsive" value="" required>-->
+
+                        <table id="myOrderTable" class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testBody"></tbody>
+                        </table>
+
+
+                       
                         
                     </div>
 
