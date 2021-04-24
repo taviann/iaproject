@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 02:49 PM
+-- Generation Time: Apr 24, 2021 at 02:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
-CREATE DATABASE IF NOT EXISTS `project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `project`;
 
 -- --------------------------------------------------------
 
@@ -46,6 +44,7 @@ CREATE TABLE `customers` (
 
 CREATE TABLE `foods` (
   `id_food` int(11) NOT NULL,
+  `id_restaurant` int(11) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `description` varchar(45) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
@@ -56,9 +55,9 @@ CREATE TABLE `foods` (
 -- Dumping data for table `foods`
 --
 
-INSERT INTO `foods` (`id_food`, `name`, `description`, `price`, `image`) VALUES
-(793, 'BeefPatty', 'Patty made of beef', 170, NULL),
-(21389, 'ChickenPatty', 'Patty Made of Chicken', 160, NULL);
+INSERT INTO `foods` (`id_food`, `id_restaurant`, `name`, `description`, `price`, `image`) VALUES
+(793, 100, 'BeefPatty', 'Patty made of beef', 170, NULL),
+(21389, 100, 'ChickenPatty', 'Patty Made of Chicken', 160, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,6 +107,14 @@ CREATE TABLE `restaurants` (
   `city` varchar(45) DEFAULT NULL,
   `parish` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `restaurants`
+--
+
+INSERT INTO `restaurants` (`id_restaurants`, `name`, `street`, `city`, `parish`) VALUES
+(100, 'Juicy Beef', 'Far', 'Far', 'Away'),
+(200, 'Mothers', 'Even', 'Further', 'Away');
 
 --
 -- Indexes for dumped tables
