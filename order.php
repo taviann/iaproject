@@ -2,8 +2,8 @@
 // Initialize the session
 session_start();
 //$restaurantID = $_SESSION['id_restaurant'];
-$restaurantID = $_GET['id_restaurant'];
-
+//$restaurantID = $_GET['id_restaurant'];
+$restaurantID = $_REQUEST['id_restaurant'];
 
 // Include config file
 require_once "config.php";
@@ -93,11 +93,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             //mysqli_stmt_bind_param($stmt, "i", $id);
-            mysqli_stmt_bind_param($stmt, "iiiss", $orderid, $param_id_customer, $param_id_restaurant, $param_delivery_name, $param_delivery_address);
+
+            //$restaurantID = 100;
+            
+            mysqli_stmt_bind_param($stmt, "iiiss", $orderid, $param_id_customer, $restaurantID, $param_delivery_name, $param_delivery_address);
                
             // Set parameters
             $param_id_customer = $_SESSION["id"];
-            $param_id_restaurant = 46435;
+            //$param_id_restaurant = 46435;
             $param_delivery_name = $name;
             $param_delivery_address = $address;
            
@@ -214,9 +217,11 @@ class foo{
             </div>
 
             <div id="restaurant_menu" class="restaurant_menu">
+
+
+
             <?php
-
-
+            
 echo "<table class='table table-bordered table-striped'>";
 echo "<thead>";
     echo "<tr>";
@@ -340,6 +345,8 @@ echo "</table>";
 
                     <div class="order-label">Address</div>
                     <textarea name="address" rows="10" placeholder="E.g. Street, City, Country" class="input-responsive" required></textarea>
+
+                    <input type="hidden" name="id_restaurant" value="<?php echo $restaurantID?>" />
 
                     <input type="submit" value="Confirm Order" class="btn btn-primary">
                 </fieldset>
