@@ -1,4 +1,4 @@
-# IA_final_project
+# iaproject
 Our final group project.
 
 
