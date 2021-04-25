@@ -98,17 +98,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif;
-            background-image: url("images/login_bg.jpg");
+            background-image: url("images/login_bg1.jpg");
             background-repeat: no-repeat;
-            background-size: 100% 200%; }
+            background-size: 100% 200%;
+            filter: saturate(7); }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
-<img src="images/log.png" width="30%" height="30%">
+<img src="images/log1.png" width="30%" height="30%">
 <center>
 
-    <div class="wrapper container bg-dark text-white">
+    <div class="wrapper container bg-dark text-white " style='Opacity:0.9; border-radius:10px;'>
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
 
