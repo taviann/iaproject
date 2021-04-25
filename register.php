@@ -121,12 +121,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
+        body{ font: 14px sans-serif;
+            background-image: url("images/reg.webp");
+            background-repeat: no-repeat;
+            background-size: 100% 130%;
+            filter: saturate(7); }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+<center>
+<br>
+
+    <div class="wrapper container bg-dark text-white " style='Opacity:0.8; border-radius:10px;'>
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
