@@ -81,7 +81,7 @@ fieldset{
 }
 
 
-/* CSSS for navbar section */
+/* CSS for navbar section */
 
 .logo{
     width: 10%;
@@ -100,8 +100,13 @@ fieldset{
     font-weight: bold;
 }
 
+/* CSS for For Contact Section*/
+.contact{
+  background-color: blue;
+}
 
-/* CSS for Food SEarch Section */
+
+/* CSS for Food Search Section */
 
 .food-search{
     background-image: url(../images/pic.jpg);
@@ -176,7 +181,7 @@ fieldset{
     padding: 1%;
 }
 
-/* for Order Section */
+/* CSS for Order Section */
 .order{
     width: 50%;
     margin: 0 auto;

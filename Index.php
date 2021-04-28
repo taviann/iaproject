@@ -43,7 +43,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <a href="Delivery Services.php">Delivery Services</a>
                     </li>
                     <li>
-                        <a href="Contact.php">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
 					<li>
 						<a href="profile.php"><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></a>
@@ -52,6 +52,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </div>
 
             <div class="clearfix"></div>
+
         </div>
     </section>
   
@@ -61,8 +62,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="container">
             
             <form action="food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
+             <input type="search" name="search" placeholder="Search for Food.." required>
+             <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
 
         </div>
