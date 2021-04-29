@@ -112,7 +112,7 @@ if($result = mysqli_query($link, $sql)){
                                             echo "<td>" . $value->name . "</td>";
                                             //echo "<td>" . "amnt here" . "</td>";
                                             echo "<td>";
-                                            echo "<a href=\"admin_view.php?id_provider=" . $value->id . "\" title='View queue' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href=\"admin_view.php?id_customer=" . $value->id . "\" title='View queue' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
                                             echo "</td>";
                                             echo "</tr>";
                                             

@@ -9,8 +9,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 
-$input_id_provider = trim($_GET["id_provider"]);
-$id_provider = $id_provider = $input_id_provider;
+$input_id_customer = trim($_GET["id_customer"]);
+$id_customer = $id_customer = $input_id_customer;
 
 // Include config file
 require_once "config.php";
@@ -18,13 +18,13 @@ require_once "user_class.php";
 
 //read the food
 // Attempt select query execution
-$sql = "SELECT * FROM queue WHERE id_provider = " . $id_provider . " ORDER BY time_joined ASC";
+$sql = "SELECT * FROM orders WHERE id_customer = " . $id_customer . " ORDER BY time_ordered ASC";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
             $queueOfCustomers = array();
             while($row = mysqli_fetch_array($result)){
-                $queueOfCustomers[] = new QueueCustomer($row['id_queue'], $row['id_customer'], $row['time_joined']);
+                $queueOfCustomers[] = new QueueCustomer($row['id_queue'], $row['id_customer'], $row['time_ordered']);
             }
             
         // Free result set
@@ -38,7 +38,7 @@ if($result = mysqli_query($link, $sql)){
 
 
 //get provider name
-$sql = "SELECT * FROM service_providers WHERE id_provider = " . $id_provider . " ";
+/*$sql = "SELECT * FROM restaurants WHERE id_customer = " . $id_customer . " ";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         if(mysqli_num_rows($result) > 0)
@@ -52,7 +52,7 @@ if($result = mysqli_query($link, $sql)){
     }
 } else{
     echo "ERROR: Could not execute $sql. " . mysqli_error($link);
-}
+}*/
 
 
 
@@ -89,7 +89,7 @@ if($result = mysqli_query($link, $sql)){
                     echo "<th>Position</th>";
                     echo "<th>ID</th>";
                     //echo "<th>Description</th>";
-                    echo "<th>Time Joined</th>";
+                    echo "<th>Time Ordered</th>";
                 echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
@@ -106,7 +106,7 @@ if($result = mysqli_query($link, $sql)){
                                             echo "<td>" . $countaa . "</td>";
                                             echo "<td>" . $value->id_customer . "</td>";
                                             //echo "<td>" . $value->description . "</td>";
-                                            echo "<td>" . $value->time_joined . "</td>";
+                                            echo "<td>" . $value->time_ordered . "</td>";
                                             echo "<td>";
                                             echo "<a href='viewer.php?id_customer=". $value->id_customer ."' title='View Customer' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                             //echo "<a href='remover.php?id_customer=". $value->id_customer ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
@@ -163,7 +163,7 @@ $.get(url, data, function(data, status){
                     <legend>Add To Queue</legend>
 
                     <input type="input" name="id_customer" value="<?php echo htmlspecialchars($_SESSION["id"])?>" />
-                    <input type="hidden" name="id_provider" value="<?php echo htmlspecialchars($id_provider)?>" />
+                    <input type="hidden" name="id_customer" value="<?php echo htmlspecialchars($id_customer)?>" />
 
                     <input type="submit" value="Add" class="btn btn-primary">
                 </fieldset>
@@ -179,7 +179,7 @@ $.get(url, data, function(data, status){
                     if(isset($queueOfCustomers)){
                         echo "<legend>Remove From Queue</legend>";
                         echo "<input type=\"hidden\" name=\"id_customer\" value=\" " . htmlspecialchars($queueOfCustomers[0]->id_customer) ."\" />";
-                        echo "<input type=\"hidden\" name=\"id_provider\" value=\" " . htmlspecialchars($id_provider) ."\" />";
+                        echo "<input type=\"hidden\" name=\"id_customer\" value=\" " . htmlspecialchars($id_customer) ."\" />";
                         echo "<input type=\"hidden\" name=\"id_queue\" value=\" " . htmlspecialchars($queueOfCustomers[0]->id) ."\" />";
                         echo "<input type=\"submit\" value=\"Served\" class=\"btn btn-primary\">";
                     }
@@ -199,7 +199,7 @@ $.get(url, data, function(data, status){
 
 
                     <input type="input" name="id_customer" value="<?php echo htmlspecialchars($_SESSION["id"])?>" />
-                    <input type="hidden" name="id_provider" value="<?php echo htmlspecialchars($id_provider)?>" />
+                    <input type="hidden" name="id_customer" value="<?php echo htmlspecialchars($id_customer)?>" />
 
                     <input type="submit" value="Check" class="btn btn-primary">
                 </fieldset>
