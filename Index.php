@@ -139,7 +139,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=200" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -173,7 +173,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=400" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -190,7 +190,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=500" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
@@ -208,7 +208,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=600" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
