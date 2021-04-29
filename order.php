@@ -232,6 +232,7 @@ echo "<thead>";
     echo "</tr>";
 echo "</thead>";
 echo "<tbody>";
+                            if(isset($listOfFood))
                             foreach ($listOfFood as &$value) {
                                 //$value = $value * 2;
                                 //echo '<input type="submit" name="rowButton'. $row['id'] .'" value="Delete"/>';
@@ -243,7 +244,7 @@ echo "<tbody>";
                                 echo "<td>" . '$' . $value->price . "</td>";
                                 echo "<td>";
                                 //echo "<a href='read.php?id=". $value->id ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                echo "<a onclick=\"addToOrder('$value->id', '$value->name', '$value->price')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                echo "<a onclick=\"addToOrder('$value->id', '$value->name', '$value->price')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'></span></a>";
                                 //echo "<a href='update.php?id=". $value->id ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
                                 //echo "<a href='delete.php?id=". $value->id ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                 echo "</td>";
@@ -275,7 +276,7 @@ echo "</table>";
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="categories.php">Categories</a>
+                        <a href="Order.php">Order</a>
                     </li>
                     <li>
                         <a href="Delivery Services.php">Delivery Services </a> 

@@ -16,13 +16,13 @@ require_once "provider_class.php";
 //read the food
 // Attempt select query execution
 //$sql = "SELECT * FROM foods";//where restaurant = 
-$sql = "SELECT * FROM service_providers";// WHERE id_restaurant = " . $restaurantID;
+$sql = "SELECT * FROM restaurants";// WHERE id_restaurant = " . $restaurantID;
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
             $listOfProviders = array();
             while($row = mysqli_fetch_array($result)){
-                $listOfProviders[] = new ServiceProviders($row['id_provider'], $row['name']);
+                $listOfProviders[] = new ServiceProviders($row['id_restaurants'], $row['name']);
             }
             
         // Free result set
