@@ -100,30 +100,10 @@ fieldset{
     font-weight: bold;
 }
 
-/* CSS for Contact Section */
-.Contact{
-    background: url(../images/log.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
+/* CSS for For Contact Section*/
+.contact{
+  background-color: blue;
 }
-
-h1{
-    color:white;
-}
-
-.Email{
-  padding-right: 30px;
-   position: absolute;
-   top: 155px;
-   right: 200px;
-}
-
-
-
-
-
 
 
 /* CSS for Food Search Section */
@@ -274,16 +254,5 @@ h1{
     }
     .order{
         width: 100%;
-    }
-
-    .Email{
-
-        width: 300px;
-        top: 450px;
-        padding-left: 50px; 
-        padding-right: -30px;
-        margin: 3% auto;
-    }
-
     }
 }
