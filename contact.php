@@ -17,11 +17,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     <title>Restaurant Website</title>
 
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     
- 
 </head>
 
 <body>
@@ -58,22 +56,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </section>
 
-    <br><br>
+    <br>
 
-    <section class="contact"> Contact
-      <br><br>
+    <h1 class="text-center" style="background-color:crimson;">CONTACT US</h1>
+    <section class="Contact text-center"> 
+     <form action="" method="post">
       <div class="container">
-        <form action="" method="post">
+        <div class= "Name">
+          <div class="col-md-4">
+            <label for="name" class="form-label text-danger">Name</label>
+            <input type="text" name = "Full_Name" class="form-control text-center" id="name" placeholder="Full Name" aria-label="Full_Name">
+          </div>
+        </div>
+          
+        <br>
 
-            <div class="form-group">
-             <label for="usr">Name:</label>
-             <input type="text" class="form-control" id="usr">
-            </div>
-        
+        <div class= "Email">
+          <div class="col-md-5">
+            <label for="E-Address" class="form-label text-danger">Email Address</label>
+            <input type="text" name ="Email" class="form-control text-center" id="E-Address" placeholder="Email Address" aria-label="Email">
+          </div>
+        </div>
 
-        </form>
-      </div>
 
+
+
+     </form>
+     </div>
+      
     </section>
     
     <br><br>
