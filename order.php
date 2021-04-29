@@ -32,8 +32,20 @@ if($result = mysqli_query($link, $sql)){
 
 // Close connection
 //cant close yetmysqli_close($link);
-//read ab
+//read from table restaurants
+//$sql = "SELECT * FROM restaurants WHERE id_restaurants = " . $restaurantID;
 
+$sql = "SELECT * FROM restaurants WHERE id_restaurants = " . $restaurantID;
+if($result = mysqli_query($link, $sql)){
+
+    $row = mysqli_fetch_array($result);
+    //$result=mysqli_fetch_array($sth);
+
+    $pic = $row['image'];
+    //echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
+    // Free result set
+        mysqli_free_result($result);
+}
 
  
 // Define variables and initialize with empty values
@@ -304,7 +316,8 @@ echo "</table>";
                     <legend>Selected Food</legend>
 
                     <div class="food-img">
-                        <img src="images/JP.jpg" alt="" class="img-responsive img-curve">
+                        <!--<img src="images/JP.jpg" alt="" class="img-responsive img-curve">-->
+                        <?php echo '<img class="img-responsive img-curve" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>' ?>;
                     </div>
     
                     <div class="food-desc">
