@@ -58,25 +58,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
     </section>
 
-    <br><br>
-
-    <section class="contact"> Contact
-      <br><br>
-      <div class="container">
-        <form action="" method="post">
-
-            <div class="form-group">
-             <label for="usr">Name:</label>
-             <input type="text" class="form-control" id="usr">
-            </div>
-        
-
-        </form>
-      </div>
-
+    <br>
+    
+    <section class="contact"> 
+      <h1 class="text-center" style="color:white; font-size:45px;">ABOUT OUR COMPANY</h1>
+      <div class="container" style="background-color:white; width:200px;">
+         <img src="images/log.png" alt="Not Available" width="200px;" height="180px">
+         <p class="text-center" style="font-family:courier;">WE USE COMPETITIVE MARKETS TO ARRANGE FOR DELIVERY OF OUR FOOD SUPPLY.</p>
+         <br>
+        </div>
+      
     </section>
     
-    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     
 
