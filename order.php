@@ -240,7 +240,7 @@ class foo{
                 </a>
             </div>
 
-            <div id="restaurant_menu" class="restaurant_menu">
+            <div id="restaurant_menu" class="other_table">
 
 
 
