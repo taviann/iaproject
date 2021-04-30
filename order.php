@@ -62,35 +62,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $address = $address = $input_address;
 
     
-
-    /*// Validate name
-    $input_name = trim($_POST["name"]);
-    if(empty($input_name)){
-        $name_err = "Please enter a name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
-    } else{
-        $name = $name = $input_name;
-    }
-    
-     // Validate description
-     $input_description = trim($_POST["description"]);
-     if(empty($input_description)){
-         $description_err = "Please enter a description.";
-     }else{
-         $description = $description = $input_description;
-     }
-
-    
-    // Validate value
-    $input_value = trim($_POST["value"]);
-    if(empty($input_value)){
-        $value_err = "Please enter the value";     
-    } elseif(!ctype_digit($input_value)){
-        $value_err = "Please enter a positive integer value.";
-    } else{
-        $value = $input_value;
-    }*/
 	
     //generate id lol
     $orderid = (int)date("ymhms");//had to cast to int.. guess the date didnt return a pure int type...
@@ -99,7 +70,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     //if(empty($name_err) && empty($address_err) ){
         // Prepare an insert statement
-        //$sql = "INSERT INTO orders (id_order) VALUES (?)";
         $sql = "INSERT INTO orders (id_order, id_customer, id_restaurant, delivery_name, delivery_address) VALUES (?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
@@ -129,8 +99,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         
+        //$itemsOrdered = json_decode($_POST['json']);
+        //echo $itemsOrdered;
+        //echo "<script> alert(\"sigh\") </script>";
 
         $sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (?, ?, ?)";
+        //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (";
+
+
+        
+
+
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -185,6 +164,32 @@ class foo{
 
     function removeFromOrder(id){
         
+    }
+
+
+    function postStuff(){
+        $.ajax({
+    type: 'POST',
+    url: 'morder.php',
+    data: {json: JSON.stringify(myItems)},
+    dataType: 'json',
+    success : function(returnData) {
+        //console.log(returnData);
+        //alert("meh")
+        console.log("Success:\n" + JSON.stringify(returnData));
+    },
+      error: function (returnData) {
+        //OnError(cartObject.productID)
+        console.log("Error" + JSON.stringify(returnData));
+      },
+      complete: function () {
+        // Handle the complete event
+        //alert("ajax completed " + cartObject.productID);
+        console.log("Completed")
+      }
+    });
+
+    alert("Order placed");
     }
 
     function loadTableData(items) {
@@ -310,8 +315,8 @@ echo "</table>";
             
             <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
             
-
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="order">
+            
+            <form action="javascript:postStuff()" method="post" class="order">
                 <fieldset>
                     <legend>Selected Food</legend>
 
