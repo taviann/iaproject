@@ -37,7 +37,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <a href="index.php">Home</a>
                     </li>
                     <li>
-                        <a href="Delivery Services.php">Delivery Services</a>
+                        <a href="Delivery Services.php">Delivery Service</a>
                     </li>
                     <li>
                         <a href="contact.php">Contact</a>
@@ -57,11 +57,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
     <section class="food-search text-center">
         <div class="container">
-            
+            <div style="width:70vw">
             <form action="food-search.php" method="POST">
              <input type="search" name="search" placeholder="Search for Food.." required>
-             <input type="submit" name="submit" value="Search" class="btn btn-primary">
+             <input type="submit" name="submit" value="Search" class="button btn-primary">
             </form>
+            <div>
 
         </div>
     </section>
@@ -273,7 +274,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
 
         <p class="text-center">
-            <a href="Delivery Services.php">See All Delivery Services</a>
+            <a href="Delivery Services.php">See Delivery Service</a>
         </p>
     </section>
     

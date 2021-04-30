@@ -303,7 +303,7 @@ echo "</table>";
                     </li>
                     
                     <li>
-                        <a href="Delivery Services.php">Delivery Services </a> 
+                        <a href="Delivery Services.php">Delivery Service</a> 
                     </li>
                     <li>
                         <a href="contact.php">Contact</a>
