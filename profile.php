@@ -70,19 +70,57 @@ function loadTableData(items) {
     });
   }
 
+  function loadOrdersTableData(items) {
+    const table = document.getElementById("testBody1");
+    table.innerHTML = "";
+    items.forEach( item => {
+      let row = table.insertRow();
+      let name = row.insertCell(0);
+      name.innerHTML = item;
+      let price = row.insertCell(1);
+      price.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>a</span></a>";//"$"+item.price;
+    });
+  }
 
-function getFoodIds(){
+
+function getFoodIds(order_id){
     $.ajax({
     type: 'GET',
     url: 'specific_order_details.php',
     data: {
-        id_order: 2104040434
+        id_order: order_id
         },
     dataType: 'json',
     success : function(returnData) {
         //console.log("Success:\n" + JSON.stringify(returnData));
         //getFoodFromFoodTable(returnData);
         getFoodFromFoodTable(JSON.stringify(returnData));
+    },
+      error: function (returnData) {
+        console.log("Error" + JSON.stringify(returnData));
+      },
+      complete: function () {
+        // Handle the complete event
+        console.log("Completed")
+
+        
+      }
+    });
+}
+
+function getMyOrders(){
+    $.ajax({
+    type: 'GET',
+    url: 'getMyOrderIDs.php',
+    data: {
+        id_customer: <?php echo htmlspecialchars($_SESSION["id"])?>
+        },
+    dataType: 'json',
+    success : function(returnData) {
+        //console.log("Success:\n" + JSON.stringify(returnData));
+        //getFoodFromFoodTable(returnData);
+        //getFoodFromFoodTable(JSON.stringify(returnData));
+        loadOrdersTableData(returnData);
     },
       error: function (returnData) {
         console.log("Error" + JSON.stringify(returnData));
@@ -142,6 +180,15 @@ function getFoodFromFoodTable(array_of_ids){
                             <tbody id="testBody"></tbody>
                         </table>
 
+                        <table id="stuffWeGot" class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                <th>Item</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testBody1"></tbody>
+                        </table>
+
     <p>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
@@ -151,7 +198,8 @@ function getFoodFromFoodTable(array_of_ids){
     <script>
 
 
-getFoodIds();
+//getFoodIds();
+getMyOrders();
 
 //loadTableData(items);
 
