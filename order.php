@@ -167,12 +167,19 @@ class foo{
     }
 
 
-    function postStuff(){
+    function postStuff(fullname, contact, email, address, id_restaurant){
         $.ajax({
     type: 'POST',
     url: 'morder.php',
-    data: {json: JSON.stringify(myItems)},
-    dataType: 'json',
+    data: {
+        json: JSON.stringify(myItems),
+        'full-name': fullname,
+        contact: contact,
+        email: email,
+        address: address, 
+        id_restaurant: id_restaurant
+        },
+    //dataType: 'json',
     success : function(returnData) {
         //console.log(returnData);
         //alert("meh")
@@ -189,7 +196,7 @@ class foo{
       }
     });
 
-    alert("Order placed");
+    alert("Order placed:\n" + fullname + "\n" + contact);
     }
 
     function loadTableData(items) {
@@ -316,7 +323,7 @@ echo "</table>";
             <h2 class="text-center text-white">Fill this form to confirm your order.</h2>
             
             
-            <form action="javascript:postStuff()" method="post" class="order">
+            <form action="javascript:postStuff(document.getElementsByName('full-name')[0].value, document.getElementsByName('contact')[0].value, document.getElementsByName('email')[0].value, document.getElementsByName('address')[0].value, document.getElementsByName('id_restaurant')[0].value)" method="post" class="order">
                 <fieldset>
                     <legend>Selected Food</legend>
 

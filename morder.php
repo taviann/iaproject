@@ -9,44 +9,6 @@ $restaurantID = $_REQUEST['id_restaurant'];
 require_once "config.php";
 require_once "food_class.php";
 
-//read the food
-// Attempt select query execution
-//$sql = "SELECT * FROM foods";//where restaurant = 
-$sql = "SELECT * FROM foods WHERE id_restaurant = " . $restaurantID;
-if($result = mysqli_query($link, $sql)){
-    if(mysqli_num_rows($result) > 0){
-
-            $listOfFood = array();
-            while($row = mysqli_fetch_array($result)){
-                $listOfFood[] = new Food($row['id_food'], $row['name'], $row['description'], $row['price']);
-            }
-            
-        // Free result set
-        mysqli_free_result($result);
-    } else{
-        echo "<p class='lead'><em>No records were found.</em></p>";
-    }
-} else{
-    echo "ERROR: Could not execute $sql. " . mysqli_error($link);
-}
-
-// Close connection
-//cant close yetmysqli_close($link);
-//read from table restaurants
-//$sql = "SELECT * FROM restaurants WHERE id_restaurants = " . $restaurantID;
-
-$sql = "SELECT * FROM restaurants WHERE id_restaurants = " . $restaurantID;
-if($result = mysqli_query($link, $sql)){
-
-    $row = mysqli_fetch_array($result);
-    //$result=mysqli_fetch_array($sth);
-
-    $pic = $row['image'];
-    //echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
-    // Free result set
-        mysqli_free_result($result);
-}
-
  
 // Define variables and initialize with empty values
 $name = $description = "";
@@ -60,6 +22,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $input_address = trim($_POST["address"]);
     $address = $address = $input_address;
+
+    //echo $restaurantID . " " . $name . $address;
 
     
 	
@@ -88,16 +52,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 //header("location: index.php");
                 //exit();
             } else{
-                echo "Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later...";
             }
         }
 
         
-        //$itemsOrdered = json_decode($_POST['json']);
+        $itemsOrdered = json_decode($_POST['json']);
+
+        if(isset($itemsOrdered)){
+            echo "moonyano ";// . $itemsOrdered[0]->id . $itemsOrdered[0]->name . $itemsOrdered[0]->price;
+        } else {
+            echo "not set ";
+        }
+
         //echo $itemsOrdered;
         //echo "<script> alert(\"sigh\") </script>";
 
-        $sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (?, ?, ?)";
+        //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES ";
+
+        $counta = 0;
+        foreach ($itemsOrdered as $value) {
+            if($counta == 0){
+                $sql .= " (" . $value->id . ", " . $value->name . ", " . $value->price  . ")";
+            } else {
+                $sql .= ", (" . $value->id . ", " . $value->name . ", " . $value->price  . ")";
+            }
+            $counta = $counta + 1;
+            //echo "$value <br>";
+        }
+          echo $sql;
         //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (";
 
 
@@ -108,18 +92,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             //mysqli_stmt_bind_param($stmt, "i", $id);
-            mysqli_stmt_bind_param($stmt, "iii", $mid, $orderid,  $param_id_food);
+            //mysqli_stmt_bind_param($stmt, "iii", $mid, $orderid,  $param_id_food);
                
             // Set parameters
             //generate id lol
-            $mid = (int)date("ymhms");//had to cast to int.. guess the date didnt return a pure int type...
-            $param_id_food = 321412431;
+            //$mid = (int)date("ymhms");//had to cast to int.. guess the date didnt return a pure int type...
+            //$param_id_food = 321412431;
 
 
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: index.php");
+                //echo $itemsOrdered;
+                //echo implode(", ", $itemsOrdered);
+                //header("location: index.php");
+                echo "worked...";
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
