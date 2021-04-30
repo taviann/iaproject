@@ -29,7 +29,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Peepers</a>
+  <a class="navbar-brand" href="index.php">Home</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -39,18 +39,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">History</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Report</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
-      </li>
+      
     </ul>
   </div>
 </nav>
+
 
 
 </head>
@@ -78,11 +71,13 @@ function loadTableData(items) {
       let row = table.insertRow();
       let name = row.insertCell(0);
       //name.innerHTML = item;
-      name.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>"+ item +"</span></a>";
+      name.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" style=\"cursor:pointer\"title='Update Record' >"+ item +"</a>";
       //let price = row.insertCell(1);
       //price.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>a</span></a>";//"$"+item.price;
     });
   }
+
+
 
 
 function getFoodIds(order_id){
@@ -162,18 +157,20 @@ function getFoodFromFoodTable(array_of_ids){
     });
 }
 
-
-
-
-
-
-
 </script>
+
+
+
+
+
 
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></b><a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a></h1>
 
-    <table id="myOrderTable" class="table table-borderless table-striped table-earning">
+
+        <section class="food-search text-center">
+        <div class="container">
+        <table id="myOrderTable" class="table table-borderless table-striped table-earning">
                             <thead>
                                 <tr>
                                 <th>Item</th>
@@ -181,7 +178,14 @@ function getFoodFromFoodTable(array_of_ids){
                                 </tr>
                             </thead>
                             <tbody id="testBody"></tbody>
-                        </table>
+                        </table>           
+
+        </div>
+    </section>
+
+
+
+    
 
     
 	
@@ -190,7 +194,7 @@ function getFoodFromFoodTable(array_of_ids){
   <table id="stuffWeGot" >
                             <thead>
                                 <tr>
-                                <th>Item</th>
+                                <th>Check Orders Here</th>
                                 </tr>
                             </thead>
                             <tbody id="testBody1"></tbody>

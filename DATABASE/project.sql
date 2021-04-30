@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2021 at 12:00 AM
+-- Generation Time: Apr 30, 2021 at 08:00 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -93,26 +93,13 @@ CREATE TABLE `items_ordered` (
 --
 
 INSERT INTO `items_ordered` (`id`, `id_order`, `id_food`) VALUES
-(2104030400, 2104030400, 321412431),
-(2104030404, 2104030404, 321412431),
-(2104030406, 2104030406, 321412431),
-(2104030416, 2104030416, 321412431),
-(2104030417, 2104030417, 321412431),
-(2104030419, 2104030419, 321412431),
-(2104030423, 2104030423, 321412431),
-(2104030425, 2104030425, 321412431),
-(2104030426, 2104030426, 321412431),
-(2104030430, 2104030430, 321412431),
-(2104030431, 2104030431, 321412431),
-(2104030436, 2104030436, 321412431),
-(2104030439, 2104030439, 321412431),
-(2104030443, 2104030443, 321412431),
-(2104030453, 2104030453, 321412431),
-(2104030458, 2104030458, 321412431),
-(2104040407, 2104040407, 321412431),
-(2104040408, 2104040406, 321412431),
-(2104040417, 2104040417, 321412431),
-(2104100438, 2104100438, 321412431);
+(2104030460, 2104070417, 65),
+(2104030461, 2104070417, 67),
+(2104030462, 2104070446, 21389),
+(2104030463, 2104070446, 21389),
+(2104030464, 2104070402, 67),
+(2104030465, 2104070402, 793),
+(2104030466, 2104070402, 65);
 
 -- --------------------------------------------------------
 
@@ -136,11 +123,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id_order`, `id_customer`, `id_food`, `id_restaurant`, `delivery_name`, `delivery_address`, `time_ordered`, `total`) VALUES
-(2104030406, 1, NULL, 100, 'Jermaine Cunningham', '2704 Columbia pike', NULL, NULL),
-(2104030423, 1, NULL, 300, 'Jermaine Cunningham', '2704 Columbia pike', NULL, NULL),
-(2104040406, 1, NULL, 100, 'Jermaine Taviann Cunningham', 'Lot 59 Cashew way, Charlemont Scheme', NULL, NULL),
-(2104040407, 1, NULL, 100, 'Jermaine Taviann Cunningham', 'Lot 59 Cashew way, Charlemont Scheme', NULL, NULL),
-(2104040417, 2, NULL, 100, 'Jermaine Taviann Cunningham', 'Lot 59 Cashew way, Charlemont Scheme', NULL, NULL);
+(2104070402, 3, NULL, 100, 'Jermaine Taviann Cunningham', '3201 Landover street', NULL, NULL),
+(2104070417, 3, NULL, 100, 'Jermaine Taviann Cunningham', '3201 Landover street', NULL, NULL),
+(2104070446, 3, NULL, 100, 'Jermaine Taviann Cunningham', '3201 Landover street', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -215,6 +200,12 @@ ALTER TABLE `restaurants`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `items_ordered`
+--
+ALTER TABLE `items_ordered`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2104030467;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
