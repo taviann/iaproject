@@ -193,7 +193,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="food-box">
                 <div class="food-img">
-                    <img src="images/Klogo2.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                    <img src="images/KlogoT.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
                 </div>
 
                 <div class="food-desc">
