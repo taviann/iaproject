@@ -59,11 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         $itemsOrdered = json_decode($_POST['json']);
 
-        if(isset($itemsOrdered)){
-            echo "moonyano " . $orderid;// . $itemsOrdered[0]->id . $itemsOrdered[0]->name . $itemsOrdered[0]->price;
-        } else {
-            echo "not set ";
-        }
+        
 
         //echo $itemsOrdered;
         //echo "<script> alert(\"sigh\") </script>";
@@ -81,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $counta = $counta + 1;
             //echo "$value <br>";
         }
-          echo "\n" . $sql;
+          //echo "\n" . $sql;
         //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (";
 
 
@@ -106,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 //echo $itemsOrdered;
                 //echo implode(", ", $itemsOrdered);
                 //header("location: index.php");
-                echo "worked...";
+                echo $orderid;;
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";

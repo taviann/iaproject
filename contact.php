@@ -60,16 +60,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
    
     
-    <section class="contact" style="background-color:#35a2b8;"> 
+    <section class="contact" style="background-color:#35a2b8; height:100vh"> 
         
       <h1 class="text-center" style="color:white; font-size:45px;">ABOUT OUR COMPANY</h1>
 
         <br>
 
-        <div class="container" style="background-color:white; width:300px;">          
+        <div class="container" style="background-color:white; width:75vw;">          
          <img src="images/log.png" alt="Not Available" width="300px;" height="180px">
          <p class="text-center" style="font-family:courier; font-size:20px;" >
-         WE USE COMPETITIVE MARKETS TO ARRANGE FOR DELIVERY OF OUR FOOD SUPPLY. <br> WE ENSURE TO GIVE THE MOST RELIABLE DELIVERY SERVICE ISLANDWIDE.<br><br> *ESTABLISHED IN JULY 2020*  <br><br>Contact at us:(876)450-5490 <br><br> OR <br><br>
+         WE USE COMPETITIVE MARKETS TO ARRANGE FOR DELIVERY OF OUR FOOD SUPPLY. <br> WE ENSURE TO GIVE THE MOST RELIABLE DELIVERY SERVICE IN MANCHESTER.<br><br> *ESTABLISHED IN JULY 2020*  <br><br>Contact at us:(876)450-5490 <br><br> OR <br><br>
          MESSAGE US BELOW <i class="fas fa-arrow-down"></i></p>
         </div>
 

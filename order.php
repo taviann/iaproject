@@ -184,6 +184,8 @@ class foo{
         //console.log(returnData);
         //alert("meh")
         console.log("Success:\n" + JSON.stringify(returnData));
+
+        alert("Order placed:\n" + fullname + "\n" + contact + "\nOrder #: " + returnData);
     },
       error: function (returnData) {
         //OnError(cartObject.productID)
@@ -196,7 +198,7 @@ class foo{
       }
     });
 
-    alert("Order placed:\n" + fullname + "\n" + contact);
+    
     }
 
     function loadTableData(items) {
