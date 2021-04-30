@@ -159,6 +159,77 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="food-box">
                 <div class="food-img">
+                    <img src="images/Dlogo.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                </div>
+
+                <div class="food-desc">
+                    <h4>Dominoes</h4>
+                   
+                    <p class="food-detail">
+                       The Menu Can be found on there website.
+                    </p>
+                    <br>
+
+                    <a href="order.php?id_restaurant=600"><div class="button">Order Now</div></a>
+                </div>
+            </div>
+
+            <div class="food-box">
+                <div class="food-img">
+                    <img src="images/LLlogo.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                </div>
+
+                <div class="food-desc">
+                    <h4>Pizza Hut</h4>
+                   
+                    <p class="food-detail">
+                       The Menu Can be found on there website.
+                    </p>
+                    <br>
+
+                    <a href="order.php?id_restaurant=400"><div class="button">Order Now</div></a>
+                </div>
+            </div>
+
+            <div class="food-box">
+                <div class="food-img">
+                    <img src="images/Klogo2.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                </div>
+
+                <div class="food-desc">
+                    <h4>KFC</h4>
+                   
+                    <p class="food-detail">
+                       The Menu Can be found on there website.
+                    </p>
+                    <br>
+
+                    <a href="order.php?id_restaurant=500"><div class="button">Order Now</div></a>
+                </div>
+            </div>
+
+            <!--<div class="food-box">
+                <div class="food-img" >
+                    <img src="images/Dlogo.jpg" alt="Chicken Hawain Momo" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                </div>
+
+                <div class="food-desc">
+                    <h4>Dominoes</h4>
+                   
+                    <p class="food-detail">
+                          The Menu Can be found on there website.
+                    <br>
+                    </p>
+                    <br>
+
+                    <a href="order.php?id_restaurant=600"><div class="button">Order Now</div></a>
+                </div>
+            </div>
+
+            
+            
+            <div class="food-box">
+                <div class="food-img">
                 
                     <img src="images/Plogo.png" alt="" height="90px" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
                 </div>
@@ -190,25 +261,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                     <a href="order.php?id_restaurant=500"><div class="button">Order Now</div></a>
                 </div>
-            </div>
+            </div>-->
 
-            <div class="food-box" style="position: absolute; top:210%; width:450px">
-                <div class="food-img" >
-                    <img src="images/Dlogo.jpg" alt="Chicke Hawain Momo" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
-                </div>
-
-                <div class="food-desc">
-                    <h4>Dominoes</h4>
-                   
-                    <p class="food-detail">
-                          The Menu Can be found on there website.
-                    <br>
-                    </p>
-                    <br>
-
-                    <a href="order.php?id_restaurant=600"><div class="button">Order Now</div></a>
-                </div>
-            </div>
+            
 
 
             <div class="clearfix"></div>
