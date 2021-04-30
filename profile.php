@@ -7,6 +7,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+
+
+
+
 ?>
  
 <!DOCTYPE html>
@@ -55,6 +60,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
     <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></b></h1>
+
+    <table id="myOrderTable" class="table table-borderless table-striped table-earning">
+                            <thead>
+                                <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testBody"></tbody>
+                        </table>
+
     <p>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
