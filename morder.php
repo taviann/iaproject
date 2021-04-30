@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $itemsOrdered = json_decode($_POST['json']);
 
         if(isset($itemsOrdered)){
-            echo "moonyano ";// . $itemsOrdered[0]->id . $itemsOrdered[0]->name . $itemsOrdered[0]->price;
+            echo "moonyano " . $orderid;// . $itemsOrdered[0]->id . $itemsOrdered[0]->name . $itemsOrdered[0]->price;
         } else {
             echo "not set ";
         }
@@ -69,19 +69,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //echo "<script> alert(\"sigh\") </script>";
 
         //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (?, ?, ?)";
-        $sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES ";
+        $sql = "INSERT INTO items_ordered (id_order, id_food) VALUES ";
 
         $counta = 0;
         foreach ($itemsOrdered as $value) {
             if($counta == 0){
-                $sql .= " (" . $value->id . ", " . $value->name . ", " . $value->price  . ")";
+                $sql .= " (" . $orderid . ", " . $value->id . ")";
             } else {
-                $sql .= ", (" . $value->id . ", " . $value->name . ", " . $value->price  . ")";
+                $sql .= ", (" . $orderid . ", " . $value->id . ")";
             }
             $counta = $counta + 1;
             //echo "$value <br>";
         }
-          echo $sql;
+          echo "\n" . $sql;
         //$sql = "INSERT INTO items_ordered (id, id_order, id_food) VALUES (";
 
 
