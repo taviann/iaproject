@@ -177,7 +177,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             <div class="food-box">
                 <div class="food-img">
-                    <img src="images/Klogo.png" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
+                    <img src="images/Klogo.png" alt="" height="90px" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
                 </div>
 
                 <div class="food-desc">
@@ -192,8 +192,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div>
             </div>
 
-            <div class="food-box">
-                <div class="food-img">
+            <div class="food-box" style="position: absolute; top:210%; width:450px">
+                <div class="food-img" >
                     <img src="images/Dlogo.jpg" alt="Chicke Hawain Momo" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
                 </div>
 
