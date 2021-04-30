@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
    
     
-    <section class="contact" style="background-color:blue;"> 
+    <section class="contact" style="background-color:#35a2b8;"> 
         
       <h1 class="text-center" style="color:white; font-size:45px;">ABOUT OUR COMPANY</h1>
 
@@ -79,8 +79,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <br>
 
-    <h1 class="text-center" style="color:blue; font-size:30px;">CONTACT FORM</h1>
-    <section class="contact-form" style="background-color:blue;">
+    <h1 class="text-center" style="color:#35a2b8; font-size:30px;">CONTACT FORM</h1>
+    <section class="contact-form" style="background-color:#35a2b8;">
 
      <div class="container">
       <form id="formID"  action="" method="post">
@@ -104,7 +104,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                  <textarea class="form-control text-center " id="comment" rows="3"></textarea>
               </div>
            </div>
-           <button type="button" class="btn btn-danger">Submit</button>
+           <button type="button" class="btn btn-info">Submit</button>
            <br>
       </form>
      </div>
