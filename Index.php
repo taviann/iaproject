@@ -105,7 +105,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <section class="food-menu">
         <div class="container">
             <h2 class="text-center">Food Restaurants</h2>
-
+            
             <div class="food-box">
                 <div class="food-img">
                     <img src="images/JP.jpg" alt="" class="img-responsive img-curve" style=" box-shadow: 1px 1px 10px black">
@@ -119,7 +119,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=100" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=100"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=200" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=200"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
@@ -153,7 +153,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=300" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=300"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
@@ -171,7 +171,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=400" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=400"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
@@ -188,7 +188,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=500" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=500"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
@@ -206,7 +206,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </p>
                     <br>
 
-                    <a href="order.php?id_restaurant=600" class="btn btn-primary">Order Now</a>
+                    <a href="order.php?id_restaurant=600"><div class="button">Order Now</div></a>
                 </div>
             </div>
 
