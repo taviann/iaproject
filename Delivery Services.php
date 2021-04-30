@@ -29,7 +29,7 @@
                         <a href="categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="Delivery Services.php">Delivery Services</a>
+                        <a href="Delivery Services.php">Delivery Service</a>
                     </li>
                     <li>
                         <a href="Contact.php">Contact</a>
@@ -44,13 +44,20 @@
     <section class="food-search text-center">
         <div class="container">
             
-            <form action="food-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Food.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
+        <a href="#">
+            <div style="width:28%" float-container">
+                <img src="images/876get.png" alt="Delivery Service" class="img-responsive img-curve">
+            </div>
+            </a>
+
+            <iframe style="width:50%; border-radius: 50vh;" src="https://www.876get.com/" title="W3Schools Free Online Web Tutorials"></iframe>
+
 
         </div>
     </section>
+
+
+    
    
 
 

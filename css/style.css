@@ -194,6 +194,11 @@ position: fixed;
     float: left;
     margin: 2%;
 }
+.box8 {
+    float: top;
+    width: 28%;
+    margin: 2%;
+}
 
 
 /* CSS for Food Menu */
