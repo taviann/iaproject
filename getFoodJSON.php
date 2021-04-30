@@ -26,7 +26,7 @@ $counta = 0;
                 $sql .= $value;
             } else {
                 //$sql .= " AND " . $value->id;
-                $sql .= " AND " . $value;
+                $sql .= " OR id_food = " . $value;
             }
             $counta = $counta + 1;
             //echo "$value <br>";
