@@ -18,6 +18,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <style>
@@ -76,9 +77,10 @@ function loadTableData(items) {
     items.forEach( item => {
       let row = table.insertRow();
       let name = row.insertCell(0);
-      name.innerHTML = item;
-      let price = row.insertCell(1);
-      price.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>a</span></a>";//"$"+item.price;
+      //name.innerHTML = item;
+      name.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>"+ item +"</span></a>";
+      //let price = row.insertCell(1);
+      //price.innerHTML = "<a onclick=\"getFoodIds('" + item +"')\" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-plus'>a</span></a>";//"$"+item.price;
     });
   }
 
@@ -168,7 +170,8 @@ function getFoodFromFoodTable(array_of_ids){
 
 </script>
 
-    <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></b></h1>
+    <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></b><a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+        <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a></h1>
 
     <table id="myOrderTable" class="table table-borderless table-striped table-earning">
                             <thead>
@@ -180,7 +183,11 @@ function getFoodFromFoodTable(array_of_ids){
                             <tbody id="testBody"></tbody>
                         </table>
 
-                        <table id="stuffWeGot" class="table table-borderless table-striped table-earning">
+    
+	
+    <div class = "other_table">
+  <!--<table id="stuffWeGot" class=" table table-borderless table-striped table-earning">-->
+  <table id="stuffWeGot" >
                             <thead>
                                 <tr>
                                 <th>Item</th>
@@ -188,14 +195,10 @@ function getFoodFromFoodTable(array_of_ids){
                             </thead>
                             <tbody id="testBody1"></tbody>
                         </table>
-
-    <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
-    </p>
-	
+</div>
 
     <script>
+
 
 
 //getFoodIds();
