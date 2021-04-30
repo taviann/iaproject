@@ -79,7 +79,10 @@ fieldset{
     padding: 3%;
     border-radius: 5px;
 }
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 /* CSS for navbar section */
 
@@ -103,7 +106,38 @@ fieldset{
 /* CSS for For Contact Section */
 .contact{
     background-color: crimson;
+    border-style: solid;
 }
+
+.contact-form{
+    background-color: crimson;
+    border-style: solid;
+}
+
+.Name{
+    position: relative;
+    right:-100px;
+}
+
+.Email{
+    position: relative;
+    top:-70px;
+    left:600px;
+}
+
+.Comment{
+    position: relative;
+    top:-40px;
+    right:-300px;
+}
+
+.btn{
+    position: relative;
+    top:-20px;
+    right:-480px;
+}
+
+
 
 /* CSS for Food Search Section */
 
@@ -231,6 +265,7 @@ fieldset{
     .categories{
         padding: 20% 0;
     }
+
     h2{
         margin-bottom: 10%;
     }
@@ -251,7 +286,40 @@ fieldset{
     .social{
         padding: 5% 0;
     }
+
     .order{
         width: 100%;
     }
+
+    .Name{
+        position: relative;
+        right:-30px;
+    }
+    
+    .Email{
+        position: relative;
+        top:20px;
+        left:29px;
+    }
+    
+    .Comment{
+        position: relative;
+        top:30px;
+        right:-30px;
+    }
+    
+    .btn{
+        position: relative;
+        top:40px;
+        right:-50px;
+    }
+    
+    .contact-form{
+        padding-bottom:50px;
+    }
+        
+    
+    
+        
+        
 }

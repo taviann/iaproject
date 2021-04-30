@@ -292,7 +292,7 @@ echo "</table>";
                         <a href="Delivery Services.php">Delivery Services </a> 
                     </li>
                     <li>
-                        <a href="Contact.php">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
 					<li>
 						<a href="profile.php"><?php echo htmlspecialchars($_SESSION["firstname"]. " " . $_SESSION["lastname"]); ?></a>
