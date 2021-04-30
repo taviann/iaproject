@@ -60,14 +60,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
    
     
-    <section class="contact"> 
+    <section class="contact" style="background-color:blue;"> 
+        
       <h1 class="text-center" style="color:white; font-size:45px;">ABOUT OUR COMPANY</h1>
 
         <br>
 
         <div class="container" style="background-color:white; width:300px;">          
          <img src="images/log.png" alt="Not Available" width="300px;" height="180px">
-         <p class="text-center" style="font-family:courier;">
+         <p class="text-center" style="font-family:courier; font-size:20px;" >
          WE USE COMPETITIVE MARKETS TO ARRANGE FOR DELIVERY OF OUR FOOD SUPPLY. <br> WE ENSURE TO GIVE THE MOST RELIABLE DELIVERY SERVICE ISLANDWIDE.<br><br> *ESTABLISHED IN JULY 2020*  <br><br>Contact at us:(876)450-5490 <br><br> OR <br><br>
          MESSAGE US BELOW <i class="fas fa-arrow-down"></i></p>
         </div>
@@ -78,8 +79,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <br>
 
-    <h1 class="text-center" style="color:crimson; font-size:30px;">CONTACT FORM</h1>
-    <section class="contact-form">
+    <h1 class="text-center" style="color:blue; font-size:30px;">CONTACT FORM</h1>
+    <section class="contact-form" style="background-color:blue;">
+
      <div class="container">
       <form id="formID"  action="" method="post">
            <div class="Name">
@@ -102,7 +104,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                  <textarea class="form-control text-center " id="comment" rows="3"></textarea>
               </div>
            </div>
-           <input class="btn btn-primary" type="submit" value="Submit">
+           <button type="button" class="btn btn-danger">Submit</button>
            <br>
       </form>
      </div>

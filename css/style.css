@@ -79,10 +79,13 @@ fieldset{
     padding: 3%;
     border-radius: 5px;
 }
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+
 
 /* CSS for navbar section */
 
@@ -105,12 +108,10 @@ html, body {
 
 /* CSS for For Contact Section */
 .contact{
-    background-color: crimson;
-    border-style: solid;
+    border-style:solid;
 }
 
 .contact-form{
-    background-color: crimson;
     border-style: solid;
 }
 
